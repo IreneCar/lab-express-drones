@@ -1,7 +1,7 @@
 // Iteration #1
 const mongoose = require("mongoose");
 
-const dronSchema = new mongoose.Schema({
+const droneSchema = new mongoose.Schema({
   name: {
     type: String
   },
@@ -13,6 +13,6 @@ const dronSchema = new mongoose.Schema({
   }
 });
 
-const Dron = mongoose.model("Dron", dronSchema);
+const Drone = mongoose.model("Drone", droneSchema);
 //Pelicula -> peliculas
-module.exports = Dron;
+module.exports = Drone;
