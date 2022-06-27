@@ -12,5 +12,10 @@
   </ul>
 
   <a href="/drones/{{_id}}/edit">Edit drone</a>
+  <br>
+  <form action="/drones/{{_id}}/delete" method="post">
+    <button type="submit">Borrar dron</button>
+  </form>
+
 
 {{/each}}
