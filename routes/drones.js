@@ -52,11 +52,22 @@ router.get('/drones/:id/edit', (req, res, next) => {
 
 router.post('/drones/:id/edit', (req, res, next) => {
   // Iteration #4: Update the drone
-  const { name, propellers, maxSpeed } = req.body;
+ // const { id, name, propellers, maxSpeed } = req.body;
+
+ // const { id } = req.params;
+ // console.log(id);
  
-  Drone.create({ name, propellers, maxSpeed })
+ // Drone.findByIdAndUpdate({ id, name, propellers, maxSpeed })
     // .then(bookFromDB => console.log(`New book created: ${bookFromDB.title}.`))
-    .then(() => res.redirect('/drones'))
+    .then(() => {
+      const { id } = req.params;
+      const updates = req.body;
+
+      const result = await Drone.findByIdAndUpdate()
+
+      res.redirect('/drones')
+    })
+
     .catch(error => next(error));
 });
 
